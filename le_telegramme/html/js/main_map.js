@@ -1,6 +1,7 @@
 function doMap( url )
 {
-
+console.log("url");
+console.log(url);
 //Handle the map controls
 //zoom, rotation ...
 var map = new GLMap('map', {
@@ -47,30 +48,33 @@ osmb.addMapTiles(
   });
 
 /* ANIMATIONS */
-// Exemple d'animation, uniquement pour la première carte, plus d'infos dans la doc OSM Building pour configurer
+  if (url == "data/cbats1.geojson") {
+    // Exemple d'animation, uniquement pour la première carte, plus d'infos dans la doc OSM Building pour configurer
 // (voir la page github et le readme associé d'OSM Building)
 
-  /*var valuesFrom = {latitude: 48.3714, longitude: -4.4849, rotation: 0, zoom: 12, tilt: 10},
-    valuesTo = {latitude: 48.39074, longitude: -4.48574, rotation: 40, zoom: 16, tilt: 30},
-    animationTime = 15000;
+    var valuesFrom = {latitude: 48.3714, longitude: -4.4849, rotation: 0, zoom: 12, tilt: 10},
+        valuesTo = {latitude: 48.39074, longitude: -4.48574, rotation: 40, zoom: 16, tilt: 30},
+        animationTime = 15000;
 
-  var tween = new TWEEN.Tween(valuesFrom)
-      .to(valuesTo, animationTime)
-      .onUpdate(function() {
+    var tween = new TWEEN.Tween(valuesFrom)
+        .to(valuesTo, animationTime)
+        .onUpdate(function() {
           // here we call the functions to update the map state
           map.setPosition({ latitude: this.latitude, longitude: this.longitude });
           map.setRotation(this.rotation);
           map.setZoom(this.zoom);
           map.setTilt(this.tilt);
-      })
-      .start(13000);
+        })
+        .start(13000);
 
-  requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
 
-  function animate(time) {
+    function animate(time) {
       requestAnimationFrame(animate);
       TWEEN.update(time);
-  }*/
+    }
+  }
+
 
   //***************************************************************************
 
