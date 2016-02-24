@@ -69,11 +69,13 @@ osmb.addMapTiles(
 
     requestAnimationFrame(animate);
 
-    function animate(time) {
-      requestAnimationFrame(animate);
-      TWEEN.update(time);
-    }
+
   }
+
+    function animate(time) {
+        requestAnimationFrame(animate);
+        TWEEN.update(time);
+    }
 
 
   //***************************************************************************
