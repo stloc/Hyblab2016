@@ -1,7 +1,7 @@
 function doMap( url )
 {
     //console.log("url");
-    //console.log(url);
+    console.log(url);
 //Handle the map controls
 //zoom, rotation ...
     var mapSetting = {
@@ -13,6 +13,9 @@ function doMap( url )
     };
     if (url == "data/quart.geojson") {
         mapSetting.zoom = 11;
+    }
+    if (url == "data/projets.geojson") {
+        mapSetting.tilt = 45;
     }
     var map = new GLMap('map', mapSetting);
 
